@@ -5,12 +5,12 @@ Your module documentation here
 
 class CalculatorClass(object):
     """
-    Your class documentation here
+    Basic operations with list: + and *
     """
 
     def sum(self, num_list):
-        """
-        Your method documentation here
-        """
-        # your sum code here
-        return "not implement yet"  # Remove this dummy line
+        """function(array) -> sum of its elements"""
+        acum = 0
+        for index, value in enumerate(num_list):
+            acum += value
+        return acum
