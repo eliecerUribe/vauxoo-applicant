@@ -10,6 +10,8 @@ class PrimeClass(object):
 
     def is_prime(self, num_int):
         """function(a) -> boolean"""
+        if num_int == 2 or num_int == 3:
+            return True
         if num_int < 2:
             return False
         if num_int % 2 == 0:
