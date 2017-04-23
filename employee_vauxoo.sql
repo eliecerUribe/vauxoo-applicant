@@ -38,6 +38,17 @@ CREATE TABLE employee_hobby_rel (
 		REFERENCES employee_hobby (id)
 );
 
+CREATE TABLE employee_boss (
+	id serial NOT NULL,
+	id_employee integer NOT NULL,
+	id_boss integer NOT NULL,
+	CONSTRAINT pk_employee_boss PRIMARY KEY (id),
+	CONSTRAINT fk_eb_employee FOREIGN KEY (id_employee)
+		REFERENCES employee (id),
+	CONSTRAINT fk_eb_boss FOREIGN KEY (id_employee)
+		REFERENCES employee (id)
+);
+
 INSERT INTO employee_department VALUES (101, 'Sistema', 'IT y Desarrollo');
 INSERT INTO employee_department VALUES (102, 'RRHH', 'Esta es una descp');
 INSERT INTO employee_department VALUES (103, 'Contaduria', 'Esta es una descp2');
@@ -62,3 +73,8 @@ INSERT INTO employee_hobby_rel VALUES (5, 3, 1102);
 INSERT INTO employee_hobby_rel VALUES (6, 3, 1103);
 INSERT INTO employee_hobby_rel VALUES (7, 4, 1101);
 INSERT INTO employee_hobby_rel VALUES (8, 4, 1103);
+
+INSERT INTO employee_boss VALUES (1, 1, 2);
+INSERT INTO employee_boss VALUES (2, 2, 3);
+INSERT INTO employee_boss VALUES (3, 3, 4);
+INSERT INTO employee_boss VALUES (4, 4, 3);
