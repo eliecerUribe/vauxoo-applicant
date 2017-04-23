@@ -5,12 +5,22 @@ Your module documentation here
 
 class PrimeClass(object):
     """
-    Your class documentation here
+    Operations for prime numbers
     """
 
+    def __init__(self, number):
+        self.num = number
+
     def is_prime(self, num_int):
-        """
-        Your method documentation here
-        """
-        # your primes code here
-        return "not implement yet"  # Remove this dummy line
+        """function(a) -> boolean"""
+        self.num = num_int
+        if self.num < 2:
+            return False
+        if self.num % 2 == 0:
+            return False
+        acum = 3
+        while acum < self.num:
+            if self.num % acum == 0:
+                return False
+            acum += 2
+        return True
