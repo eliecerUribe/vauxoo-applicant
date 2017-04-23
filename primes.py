@@ -20,5 +20,3 @@ class PrimeClass(object):
                 return False
             acum += 2
         return True
-x = PrimeClass()
-print x.is_prime(2347)
